@@ -1,4 +1,5 @@
 # Writeoff
+App developed for KPI studets to make their studying much easier and productive. It helps to save your precious time for more useful things that numerous repetitive tasks.
 To create and run virtual environment:
 ```
 virtualenv venv --no-site-packages
