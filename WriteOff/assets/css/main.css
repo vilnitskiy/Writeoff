@@ -1,0 +1,22 @@
+.btn-link{
+	color: black!important;
+}
+
+.top_panel {
+	background-color: #336699;
+}
+
+.top_btns {
+	text-align: right;
+	margin-right: 5%; 
+}
+
+.wrapper {
+    width: 100%;
+    text-align: center;
+    margin-top: 15%;
+}
+
+.signup_btn {
+	padding: 30px;
+}
