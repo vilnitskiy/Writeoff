@@ -12,8 +12,16 @@ urlpatterns = [
 
     # Steps for unauthed user
     url(r'^faculties/', views.faculties, name='faculties'),
-    url(r'^(?P<id>\d+)/course/', views.courses, name='courses'),
-    url(r'^(?P<id>\d+)/speciality/', views.speciality, name='speciality'),
+    url(r'^(?P<id_faculty>\d+)/course/', views.courses, name='courses'),
+    url(r'^(?P<id_faculty>\d+)/(?P<id_course>\d+)/speciality/',
+        views.speciality,
+        name='speciality'),
+    url(r'^(?P<id_faculty>\d+)/(?P<id_course>\d+)/(?P<id_speciality>\d+)/specialization/',
+        views.specialization,
+        name='specialization'),
+    url(r'^(?P<id_faculty>\d+)/(?P<id_course>\d+)/(?P<id_speciality>\d+)/(?P<id_specialization>\d+)/',
+        views.files,
+        name='files'),
 
     # auth views
     url('^register/', views.RegistrationView.as_view(), name='register'),

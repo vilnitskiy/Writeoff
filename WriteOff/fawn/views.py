@@ -31,9 +31,9 @@ def faculties(request):
     return render(request, 'faculties.html', {'faculties': faculties})
 
 
-def courses(request, id):
+def courses(request, id_faculty):
     courses = models.Course.objects.all()
-    chosen_faculty = models.Faculty.objects.get(id=id)
+    chosen_faculty = models.Faculty.objects.get(id=id_faculty)
     return render(request, 'courses.html',
                   {'courses': courses,
                    'chosen_faculty': chosen_faculty})
@@ -41,3 +41,11 @@ def courses(request, id):
 
 def speciality(request):
     return render(request, 'speciality.html', {})
+
+
+def specialization(request):
+    pass
+
+
+def files(request):
+    pass
