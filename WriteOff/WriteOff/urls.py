@@ -16,7 +16,7 @@ urlpatterns = [
     url('^register/', CreateView.as_view(
             template_name='registration/register.html',
             form_class=UserCreationForm,
-            success_url='/'
+            success_url='faculties/'
     ), name='register'),
     url(r'^login/$', auth_views.login, name='login'),
     url(r'^logout/$', auth_views.logout, name='logout'),
