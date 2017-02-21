@@ -1,0 +1,202 @@
+[
+  {
+    "model": "fawn.Faculty",
+    "pk": 1,
+    "fields": {
+      "name": "ННК 'ІПСА'",
+      "full_name": "Навчально-науковий комплекс 'Інститут прикладного системного аналiзу'"
+    }
+  },
+  {
+    "model": "fawn.Faculty",
+    "pk": 1,
+    "fields": {
+      "name": "ІТС",
+      "full_name": "Навчально-науковий Iнститут телекомунiкацiйних систем"
+    }
+  },
+  {
+    "model": "fawn.Faculty",
+    "pk": 1,
+    "fields": {
+      "name": "ВПІ",
+      "full_name": "Видавничо-полiграфiчний інститут"
+    }
+  },
+  {
+    "model": "fawn.Faculty",
+    "pk": 1,
+    "fields": {
+      "name": "ІЕЕ",
+      "full_name": "Інститут енергозбереження та енергоменеджменту"
+    }
+  },
+  {
+    "model": "fawn.Faculty",
+    "pk": 1,
+    "fields": {
+      "name": "ММІ",
+      "full_name": "Механiко-машинобудiвний iнститут"
+    }
+  },
+  {
+    "model": "fawn.Faculty",
+    "pk": 1,
+    "fields": {
+      "name": "ФТІ",
+      "full_name": "Фiзико-технiчний iнститут"
+    }
+  },
+  {
+    "model": "fawn.Faculty",
+    "pk": 1,
+    "fields": {
+      "name": "ЗФ",
+      "full_name": "Зварювальний факультет"
+    }
+  },
+  {
+    "model": "fawn.Faculty",
+    "pk": 1,
+    "fields": {
+      "name": "ІФФ",
+      "full_name": "Інженерно-фiзичний факультет"
+    }
+  },
+  {
+    "model": "fawn.Faculty",
+    "pk": 1,
+    "fields": {
+      "name": "ІХФ",
+      "full_name": "Інженерно-хiмiчний факультет"
+    }
+  },
+  {
+    "model": "fawn.Faculty",
+    "pk": 1,
+    "fields": {
+      "name": "ПБФ",
+      "full_name": "Приладобудiвний факультет"
+    }
+  },
+  {
+    "model": "fawn.Faculty",
+    "pk": 1,
+    "fields": {
+      "name": "РТФ",
+      "full_name": "Радiотехнiчний факультет"
+    }
+  },
+  {
+    "model": "fawn.Faculty",
+    "pk": 1,
+    "fields": {
+      "name": "ТЕФ",
+      "full_name": "Теплоенергетичний факультет"
+    }
+  },
+  {
+    "model": "fawn.Faculty",
+    "pk": 1,
+    "fields": {
+      "name": "ФАКС",
+      "full_name": "Факультет авiацiйних i космiчних систем"
+    }
+  },
+  {
+    "model": "fawn.Faculty",
+    "pk": 1,
+    "fields": {
+      "name": "ФБМІ",
+      "full_name": "Факультет біомедичної інженерії"
+    }
+  },
+  {
+    "model": "fawn.Faculty",
+    "pk": 1,
+    "fields": {
+      "name": "ФБТ",
+      "full_name": "Факультет бiотехнологiї i бiотехнiки"
+    }
+  },
+  {
+    "model": "fawn.Faculty",
+    "pk": 1,
+    "fields": {
+      "name": "ФЕА",
+      "full_name": "Факультет електроенерготехнiки та автоматики"
+    }
+  },
+  {
+    "model": "fawn.Faculty",
+    "pk": 1,
+    "fields": {
+      "name": "ФЕЛ",
+      "full_name": "Факультет електронiки"
+    }
+  },
+  {
+    "model": "fawn.Faculty",
+    "pk": 1,
+    "fields": {
+      "name": "ФІОТ",
+      "full_name": "Факультет iнформатики та обчислювальної технiки"
+    }
+  },
+  {
+    "model": "fawn.Faculty",
+    "pk": 1,
+    "fields": {
+      "name": "ФЛ",
+      "full_name": "Факультет лiнгвiстики"
+    }
+  },
+  {
+    "model": "fawn.Faculty",
+    "pk": 1,
+    "fields": {
+      "name": "ФММ",
+      "full_name": "Факультет менеджменту та маркетингу"
+    }
+  },
+  {
+    "model": "fawn.Faculty",
+    "pk": 1,
+    "fields": {
+      "name": "ФСП",
+      "full_name": "Факультет соціології і права"
+    }
+  },
+  {
+    "model": "fawn.Faculty",
+    "pk": 1,
+    "fields": {
+      "name": "ФПМ",
+      "full_name": "Факультет прикладної математики"
+    }
+  },
+  {
+    "model": "fawn.Faculty",
+    "pk": 1,
+    "fields": {
+      "name": "ФМФ",
+      "full_name": "Фiзико-математичний факультет"
+    }
+  },
+  {
+    "model": "fawn.Faculty",
+    "pk": 1,
+    "fields": {
+      "name": "ХТФ",
+      "full_name": "Хiмiко-технологiчний факультет"
+    }
+  },
+  {
+    "model": "fawn.Faculty",
+    "pk": 1,
+    "fields": {
+      "name": "ІСЗЗІ",
+      "full_name": "Інститут спеціального зв'язку та захисту інформації"
+    }
+  }
+]

@@ -12,7 +12,7 @@ urlpatterns = [
     url(r'^faculties/', views.faculties, name='faculties'),
 
     # auth views
-    url('^register/', views.addUser.as_view(), name='register'),
+    url('^register/', views.RegistrationView.as_view(), name='register'),
     url(r'^login/$', auth_views.login, name='login'),
     url(r'^logout/$', auth_views.logout, name='logout'),
 ]

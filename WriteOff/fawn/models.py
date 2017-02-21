@@ -19,19 +19,31 @@ class Constants:
 class Course(models.Model):
     course = models.PositiveSmallIntegerField()
 
+    def __unicode__(self):
+        return u"Student %d" % (self.course)
+
 
 class Faculty(models.Model):
     name = models.CharField(max_length=10)
     full_name = models.TextField(null=True, blank=True)
 
+    def __unicode__(self):
+        return u"%s" % (self.name)
+
 
 class Speciality(models.Model):
     name = models.TextField()
+
+    def __unicode__(self):
+        return u"%s" % (self.name)
 
 
 class Specialization(models.Model):
     name = models.TextField()
     speciality = models.ForeignKey(Speciality)
+
+    def __unicode__(self):
+        return u"%s" % (self.name)
 
 
 class Teacher(models.Model):
@@ -41,7 +53,8 @@ class Teacher(models.Model):
     degree = models.CharField(max_length=30, null=True, blank=True)
 
     def full_name(self):
-        return u'%s %s %s' % (self.last_name, self.first_name, self.middle_name)
+        return u"%s %s %s" % \
+            (self.last_name, self.first_name, self.middle_name)
 
 
 class Subject(models.Model):
@@ -49,11 +62,14 @@ class Subject(models.Model):
     full_name = models.TextField()
     teacher = models.ForeignKey(Teacher, blank=True, null=True)
 
+    def __unicode__(self):
+        return u"%s %s" % (self.name, self.teacher.last_name)
+
 
 class File(models.Model):
     file = models.FileField()
     subject = models.ForeignKey('Subject')
-    type = models.TextField(choices=Constants.TYPE_CHOICES)
+    file_type = models.TextField(choices=Constants.TYPE_CHOICES)
     extra_comment = models.TextField()
     specialization = models.ForeignKey(Specialization)
     course = models.ForeignKey(Course)
@@ -67,3 +83,6 @@ class Student(models.Model):
     specialization = models.ForeignKey(Specialization, null=True, blank=True)
     course = models.ForeignKey(Course, null=True, blank=True)
     group = models.CharField(max_length=10, null=True, blank=True)
+
+    def __unicode__(self):
+        return u"%s %s" % (self.user.username, self.faculty)

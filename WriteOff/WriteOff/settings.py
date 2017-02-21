@@ -127,3 +127,8 @@ STATICFILES_DIRS = [
 ]
 
 REGISTRATION_OPEN = True
+
+# Fixtures settings
+FIXTURE_DIRS = [
+   os.path.join(BASE_DIR + '/fixtures/'),
+]
