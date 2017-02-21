@@ -37,6 +37,9 @@ class Teacher(models.Model):
     last_name = models.CharField(max_length=30, null=True, blank=False)
     degree = models.CharField(max_length=30, null=True, blank=True)
 
+    def full_name(self):
+        return u'%s %s %s' % (self.last_name, self.first_name, self.middle_name)
+
 
 class Subject(models.Model):
     name = models.CharField(max_length=30)
