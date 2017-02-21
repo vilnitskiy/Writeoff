@@ -41,7 +41,7 @@ class Specialization(models.Model):
     speciality = models.ForeignKey(Speciality)
 
     def __unicode__(self):
-        return u"%s" % (self.name, self.speciality)
+        return u"%s" % (self.name)
 
 
 class Teacher(models.Model):
@@ -51,7 +51,7 @@ class Teacher(models.Model):
     degree = models.CharField(max_length=30, null=True, blank=True)
 
     def full_name(self):
-        return u'%s %s %s' % \
+        return u"%s %s %s" % \
             (self.last_name, self.first_name, self.middle_name)
 
 
@@ -61,7 +61,7 @@ class Subject(models.Model):
     teacher = models.ForeignKey(Teacher, blank=True, null=True)
 
     def __unicode__(self):
-        return u"%s %s" % (self.name, self.teacher)
+        return u"%s %s" % (self.name, self.teacher.last_name)
 
 
 class File(models.Model):
@@ -73,16 +73,14 @@ class File(models.Model):
     course = models.ForeignKey(Course)
     faculty = models.ForeignKey(Faculty)
 
-    def __unicode__(self):
-        return u"%s" % (self.name)
-
 
 class Student(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    # custom fields
     faculty = models.ForeignKey(Faculty, null=True, blank=True)
     specialization = models.ForeignKey(Specialization, null=True, blank=True)
     course = models.ForeignKey(Course, null=True, blank=True)
     group = models.CharField(max_length=10, null=True, blank=True)
 
     def __unicode__(self):
-        return u"%s %s" % (self.user, self.faculty)
+        return u"%s %s" % (self.user.username, self.faculty)
