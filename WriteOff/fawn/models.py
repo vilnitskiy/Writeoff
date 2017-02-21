@@ -2,6 +2,8 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.signals import *
+from django.dispatch import receiver
 
 
 class Constants:
@@ -12,6 +14,7 @@ class Constants:
         ("homew", ("Homework")),
         ("otherw", ("Another type of work"))
     )
+
 
 class Course(models.Model):
     course = models.PositiveSmallIntegerField()
@@ -59,6 +62,7 @@ class File(models.Model):
 
 class Student(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    # custom fields
     faculty = models.ForeignKey(Faculty, null=True, blank=True)
     specialization = models.ForeignKey(Specialization, null=True, blank=True)
     course = models.ForeignKey(Course, null=True, blank=True)
