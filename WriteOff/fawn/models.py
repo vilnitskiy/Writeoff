@@ -18,7 +18,8 @@ class Course(models.Model):
 
 
 class Faculty(models.Model):
-    name = models.TextField()
+    name = models.CharField(max_length=10)
+    full_name = models.TextField(null=True, blank=True)
 
 
 class Speciality(models.Model):
