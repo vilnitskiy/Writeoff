@@ -17,9 +17,9 @@
     <div class="top_panel">
         <div class="top_btns">
             {% if request.user.is_authenticated %}
-                <a class="btn btn-link" href="{% url 'logout' %}">Log out</a> 
+                <a class="btn btn-link" href="{% url 'logout' %}?next={{request.path}}">Log out</a>
             {% else %}
-                <a class="btn btn-link" href="{% url 'login' %}">Log in</a>
+                <a class="btn btn-link" href="{% url 'login' %}?next={% url 'faculties' %}">Log in</a>
             {% endif %}
         </div>
     </div>
