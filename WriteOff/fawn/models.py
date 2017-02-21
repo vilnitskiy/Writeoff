@@ -13,22 +13,35 @@ class Constants:
         ("otherw", ("Another type of work"))
     )
 
+
 class Course(models.Model):
     course = models.PositiveSmallIntegerField()
+
+    def __unicode__(self):
+        return u"Studet %d" % (self.course)
 
 
 class Faculty(models.Model):
     name = models.CharField(max_length=10)
     full_name = models.TextField(null=True, blank=True)
 
+    def __unicode__(self):
+        return u"%s" % (self.name)
+
 
 class Speciality(models.Model):
     name = models.TextField()
+
+    def __unicode__(self):
+        return u"%s" % (self.name)
 
 
 class Specialization(models.Model):
     name = models.TextField()
     speciality = models.ForeignKey(Speciality)
+
+    def __unicode__(self):
+        return u"%s" % (self.name, self.speciality)
 
 
 class Teacher(models.Model):
@@ -38,7 +51,8 @@ class Teacher(models.Model):
     degree = models.CharField(max_length=30, null=True, blank=True)
 
     def full_name(self):
-        return u'%s %s %s' % (self.last_name, self.first_name, self.middle_name)
+        return u'%s %s %s' % \
+            (self.last_name, self.first_name, self.middle_name)
 
 
 class Subject(models.Model):
@@ -46,15 +60,21 @@ class Subject(models.Model):
     full_name = models.TextField()
     teacher = models.ForeignKey(Teacher, blank=True, null=True)
 
+    def __unicode__(self):
+        return u"%s %s" % (self.name, self.teacher)
+
 
 class File(models.Model):
     file = models.FileField()
     subject = models.ForeignKey('Subject')
-    type = models.TextField(choices=Constants.TYPE_CHOICES)
+    file_type = models.TextField(choices=Constants.TYPE_CHOICES)
     extra_comment = models.TextField()
     specialization = models.ForeignKey(Specialization)
     course = models.ForeignKey(Course)
     faculty = models.ForeignKey(Faculty)
+
+    def __unicode__(self):
+        return u"%s" % (self.name)
 
 
 class Student(models.Model):
@@ -63,3 +83,6 @@ class Student(models.Model):
     specialization = models.ForeignKey(Specialization, null=True, blank=True)
     course = models.ForeignKey(Course, null=True, blank=True)
     group = models.CharField(max_length=10, null=True, blank=True)
+
+    def __unicode__(self):
+        return u"%s %s" % (self.user, self.faculty)
