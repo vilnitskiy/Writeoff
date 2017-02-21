@@ -5,5 +5,5 @@ def main(request):
     return render(request, 'main.html', {})
 
 
-def faculties_list(request):
+def faculties(request):
     return render(request, 'faculties.html', {})
