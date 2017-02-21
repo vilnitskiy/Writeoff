@@ -9,7 +9,7 @@
   },
   {
     "model": "fawn.Faculty",
-    "pk": 1,
+    "pk": 2,
     "fields": {
       "name": "ІТС",
       "full_name": "Навчально-науковий Iнститут телекомунiкацiйних систем"
@@ -17,7 +17,7 @@
   },
   {
     "model": "fawn.Faculty",
-    "pk": 1,
+    "pk": 3,
     "fields": {
       "name": "ВПІ",
       "full_name": "Видавничо-полiграфiчний інститут"
@@ -25,7 +25,7 @@
   },
   {
     "model": "fawn.Faculty",
-    "pk": 1,
+    "pk": 4,
     "fields": {
       "name": "ІЕЕ",
       "full_name": "Інститут енергозбереження та енергоменеджменту"
@@ -33,7 +33,7 @@
   },
   {
     "model": "fawn.Faculty",
-    "pk": 1,
+    "pk": 5,
     "fields": {
       "name": "ММІ",
       "full_name": "Механiко-машинобудiвний iнститут"
@@ -41,7 +41,7 @@
   },
   {
     "model": "fawn.Faculty",
-    "pk": 1,
+    "pk": 6,
     "fields": {
       "name": "ФТІ",
       "full_name": "Фiзико-технiчний iнститут"
@@ -49,7 +49,7 @@
   },
   {
     "model": "fawn.Faculty",
-    "pk": 1,
+    "pk": 7,
     "fields": {
       "name": "ЗФ",
       "full_name": "Зварювальний факультет"
@@ -57,7 +57,7 @@
   },
   {
     "model": "fawn.Faculty",
-    "pk": 1,
+    "pk": 8,
     "fields": {
       "name": "ІФФ",
       "full_name": "Інженерно-фiзичний факультет"
@@ -65,7 +65,7 @@
   },
   {
     "model": "fawn.Faculty",
-    "pk": 1,
+    "pk": 9,
     "fields": {
       "name": "ІХФ",
       "full_name": "Інженерно-хiмiчний факультет"
@@ -73,7 +73,7 @@
   },
   {
     "model": "fawn.Faculty",
-    "pk": 1,
+    "pk": 10,
     "fields": {
       "name": "ПБФ",
       "full_name": "Приладобудiвний факультет"
@@ -81,7 +81,7 @@
   },
   {
     "model": "fawn.Faculty",
-    "pk": 1,
+    "pk": 11,
     "fields": {
       "name": "РТФ",
       "full_name": "Радiотехнiчний факультет"
@@ -89,7 +89,7 @@
   },
   {
     "model": "fawn.Faculty",
-    "pk": 1,
+    "pk": 12,
     "fields": {
       "name": "ТЕФ",
       "full_name": "Теплоенергетичний факультет"
@@ -97,7 +97,7 @@
   },
   {
     "model": "fawn.Faculty",
-    "pk": 1,
+    "pk": 13,
     "fields": {
       "name": "ФАКС",
       "full_name": "Факультет авiацiйних i космiчних систем"
@@ -105,7 +105,7 @@
   },
   {
     "model": "fawn.Faculty",
-    "pk": 1,
+    "pk": 14,
     "fields": {
       "name": "ФБМІ",
       "full_name": "Факультет біомедичної інженерії"
@@ -113,7 +113,7 @@
   },
   {
     "model": "fawn.Faculty",
-    "pk": 1,
+    "pk": 15,
     "fields": {
       "name": "ФБТ",
       "full_name": "Факультет бiотехнологiї i бiотехнiки"
@@ -121,7 +121,7 @@
   },
   {
     "model": "fawn.Faculty",
-    "pk": 1,
+    "pk": 16,
     "fields": {
       "name": "ФЕА",
       "full_name": "Факультет електроенерготехнiки та автоматики"
@@ -129,7 +129,7 @@
   },
   {
     "model": "fawn.Faculty",
-    "pk": 1,
+    "pk": 17,
     "fields": {
       "name": "ФЕЛ",
       "full_name": "Факультет електронiки"
@@ -137,7 +137,7 @@
   },
   {
     "model": "fawn.Faculty",
-    "pk": 1,
+    "pk": 18,
     "fields": {
       "name": "ФІОТ",
       "full_name": "Факультет iнформатики та обчислювальної технiки"
@@ -145,7 +145,7 @@
   },
   {
     "model": "fawn.Faculty",
-    "pk": 1,
+    "pk": 19,
     "fields": {
       "name": "ФЛ",
       "full_name": "Факультет лiнгвiстики"
@@ -153,7 +153,7 @@
   },
   {
     "model": "fawn.Faculty",
-    "pk": 1,
+    "pk": 20,
     "fields": {
       "name": "ФММ",
       "full_name": "Факультет менеджменту та маркетингу"
@@ -161,7 +161,7 @@
   },
   {
     "model": "fawn.Faculty",
-    "pk": 1,
+    "pk": 21,
     "fields": {
       "name": "ФСП",
       "full_name": "Факультет соціології і права"
@@ -169,7 +169,7 @@
   },
   {
     "model": "fawn.Faculty",
-    "pk": 1,
+    "pk": 22,
     "fields": {
       "name": "ФПМ",
       "full_name": "Факультет прикладної математики"
@@ -177,7 +177,7 @@
   },
   {
     "model": "fawn.Faculty",
-    "pk": 1,
+    "pk": 23,
     "fields": {
       "name": "ФМФ",
       "full_name": "Фiзико-математичний факультет"
@@ -185,7 +185,7 @@
   },
   {
     "model": "fawn.Faculty",
-    "pk": 1,
+    "pk": 24,
     "fields": {
       "name": "ХТФ",
       "full_name": "Хiмiко-технологiчний факультет"
@@ -193,7 +193,7 @@
   },
   {
     "model": "fawn.Faculty",
-    "pk": 1,
+    "pk": 25,
     "fields": {
       "name": "ІСЗЗІ",
       "full_name": "Інститут спеціального зв'язку та захисту інформації"

@@ -1,0 +1,20 @@
+[
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$12000$RZ9ZAY2uaHj2$lHwYO0s8df8JAH/d2gNqDbgEkj2icJAfj9Q5eDhJLMg=",
+        "last_login": "2016-04-12T22:44:22.827Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "vege1wgw@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2016-04-12T22:44:22.827Z",
+        "groups": [],
+        "user_permissions": []
+    }
+  }
+]

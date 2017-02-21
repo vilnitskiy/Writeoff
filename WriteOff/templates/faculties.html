@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+	{% for faculty in faculties %}
+		<a href="{% url 'courses' faculty.id %}">{{ faculty }}</a> <hr>
+	{% endfor %}
 {% endblock %}
