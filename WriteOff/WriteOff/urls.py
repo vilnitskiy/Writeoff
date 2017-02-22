@@ -20,7 +20,7 @@ urlpatterns = [
         views.specialization,
         name='specialization'),
     url(r'^(?P<id_faculty>\d+)/(?P<id_course>\d+)/(?P<id_speciality>\d+)/(?P<id_specialization>\d+)/',
-        views.files,
+        views.FilesView.as_view(),
         name='files'),
 
     # auth views

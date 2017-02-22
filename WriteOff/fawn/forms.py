@@ -4,7 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 
 from betterforms.multiform import MultiModelForm
 
-from .models import Student
+from .models import Student, File
 
 
 class UserRegistrationForm(UserCreationForm):
@@ -24,3 +24,9 @@ class RegistrationMultiForm(MultiModelForm):
         'user': UserRegistrationForm,
         'student': StudentRegistrationForm,
     }
+
+
+class FileUploadForm(ModelForm):
+    class Meta:
+        model = File
+        fields = '__all__'
