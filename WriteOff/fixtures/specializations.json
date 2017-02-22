@@ -1,0 +1,98 @@
+[
+  {
+    "model": "fawn.Specialization",
+    "pk": 1,
+    "fields": {
+    	"name": "023.01 Образотворче мистецтво",
+    	"speciality": 1
+    }
+  },
+  {
+    "model": "fawn.Specialization",
+    "pk": 2,
+    "fields": {
+    	"name": "035.04 Германські мови та літератури (переклад англійська та німецька або французька мови)",
+    	"speciality": 2
+    }
+  },
+  {
+    "model": "fawn.Specialization",
+    "pk": 3,
+    "fields": {
+    	"name": "Германські мови та літератури (переклад німецька та англійська мови)",
+    	"speciality": 2
+    }
+  },
+  {
+    "model": "fawn.Specialization",
+    "pk": 4,
+    "fields": {
+    	"name": "Романські мови та літератури (переклад французька та англійська мови)",
+    	"speciality": 2
+    }
+  },
+  {
+    "model": "fawn.Specialization",
+    "pk": 5,
+    "fields": {
+    	"name": "051.01 Економічна кібернетика",
+    	"speciality": 3
+    }
+  },
+  {
+    "model": "fawn.Specialization",
+    "pk": 6,
+    "fields": {
+    	"name": "051.02 Міжнародна економіка",
+    	"speciality": 3
+    }
+  },
+  {
+    "model": "fawn.Specialization",
+    "pk": 7,
+    "fields": {
+    	"name": "051.03 Економіка підприємства",
+    	"speciality": 3
+    }
+  },
+  {
+    "model": "fawn.Specialization",
+    "pk": 8,
+    "fields": {
+    	"name": "051.04 Управління персоналом та економіка праці",
+    	"speciality": 3
+    }
+  },
+  {
+    "model": "fawn.Specialization",
+    "pk": 9,
+    "fields": {
+    	"name": "051.05 Прикладна статистика",
+    	"speciality": 3
+    }
+  },
+  {
+    "model": "fawn.Specialization",
+    "pk": 10,
+    "fields": {
+    	"name": "054.01 Соціологія модернізації та науково-технічного розвитку",
+    	"speciality": 4
+    }
+  },
+  {
+    "model": "fawn.Specialization",
+    "pk": 11,
+    "fields": {
+    	"name": "061.01 Реклама і зв'язки з громадськістю",
+    	"speciality": 5
+    }
+  },
+  {
+    "model": "fawn.Specialization",
+    "pk": 12,
+    "fields": {
+    	"name": "061.02 Видавнича справа та редагування",
+    	"speciality": 5
+    }
+  },
+]

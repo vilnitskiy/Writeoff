@@ -1,244 +1,244 @@
 [
   {
-    "model": "auth.user",
+    "model": "fawn.Speciality",
     "pk": 1,
     "fields": {
     	"name": "Образотворче мистецтво, декоративне мистецтво, реставрація"
     }
   },
   {
-    "model": "auth.user",
+    "model": "fawn.Speciality",
     "pk": 2,
     "fields": {
     	"name": "Філологія"
     }
   },
   {
-    "model": "auth.user",
+    "model": "fawn.Speciality",
     "pk": 3,
     "fields": {
     	"name": "Економіка"
     }
   },
   {
-    "model": "auth.user",
+    "model": "fawn.Speciality",
     "pk": 4,
     "fields": {
     	"name": "Соціологія"
     }
   },
   {
-    "model": "auth.user",
+    "model": "fawn.Speciality",
     "pk": 5,
     "fields": {
     	"name": "Журналістика"
     }
   },
   {
-    "model": "auth.user",
+    "model": "fawn.Speciality",
     "pk": 6,
     "fields": {
     	"name": "Менеджмент"
     }
   },
   {
-    "model": "auth.user",
+    "model": "fawn.Speciality",
     "pk": 7,
     "fields": {
     	"name": "Публічне управління та адміністрування"
     }
   },
   {
-    "model": "auth.user",
+    "model": "fawn.Speciality",
     "pk": 8,
     "fields": {
     	"name": "Маркетинг"
     }
   },
   {
-    "model": "auth.user",
+    "model": "fawn.Speciality",
     "pk": 9,
     "fields": {
     	"name": "Право"
     }
   },
   {
-    "model": "auth.user",
+    "model": "fawn.Speciality",
     "pk": 10,
     "fields": {
     	"name": "Екологія"
     }
   },
   {
-    "model": "auth.user",
+    "model": "fawn.Speciality",
     "pk": 11,
     "fields": {
     	"name": "Фізика та астрономія"
     }
   },
   {
-    "model": "auth.user",
+    "model": "fawn.Speciality",
     "pk": 12,
     "fields": {
     	"name": "Прикладна фізика та наноматеріали"
     }
   },
   {
-    "model": "auth.user",
+    "model": "fawn.Speciality",
     "pk": 13,
     "fields": {
     	"name": "Математика"
     }
   },
   {
-    "model": "auth.user",
+    "model": "fawn.Speciality",
     "pk": 14,
     "fields": {
     	"name": "Прикладна математика"
     }
   },
   {
-    "model": "auth.user",
+    "model": "fawn.Speciality",
     "pk": 15,
     "fields": {
     	"name": "Інженерія програмного забезпечення"
     }
   },
   {
-    "model": "auth.user",
+    "model": "fawn.Speciality",
     "pk": 16,
     "fields": {
     	"name": "Комп’ютерні науки та інформаційні технології"
     }
   },
   {
-    "model": "auth.user",
+    "model": "fawn.Speciality",
     "pk": 17,
     "fields": {
     	"name": "Комп’ютерна інженерія"
     }
   },
   {
-    "model": "auth.user",
+    "model": "fawn.Speciality",
     "pk": 18,
     "fields": {
     	"name": "Системний аналіз"
     }
   },
   {
-    "model": "auth.user",
+    "model": "fawn.Speciality",
     "pk": 19,
     "fields": {
     	"name": "Кібербезпека"
     }
   },
   {
-    "model": "auth.user",
+    "model": "fawn.Speciality",
     "pk": 20,
     "fields": {
     	"name": "Прикладна механіка"
     }
   },
   {
-    "model": "auth.user",
+    "model": "fawn.Speciality",
     "pk": 21,
     "fields": {
     	"name": "Матеріалознавство"
     }
   },
   {
-    "model": "auth.user",
+    "model": "fawn.Speciality",
     "pk": 22,
     "fields": {
     	"name": "Галузеве машино-будування"
     }
   },
   {
-    "model": "auth.user",
+    "model": "fawn.Speciality",
     "pk": 23,
     "fields": {
     	"name": "Авіаційна та ракетно-космічна техніка"
     }
   },
   {
-    "model": "auth.user",
+    "model": "fawn.Speciality",
     "pk": 24,
     "fields": {
     	"name": "Металургія"
     }
   },
   {
-    "model": "auth.user",
+    "model": "fawn.Speciality",
     "pk": 25,
     "fields": {
     	"name": "Електроенергетика електротехніка та електромеханіка"
     }
   },
   {
-    "model": "auth.user",
+    "model": "fawn.Speciality",
     "pk": 26,
     "fields": {
     	"name": "Енергетичне машинобудування"
     }
   },
   {
-    "model": "auth.user",
+    "model": "fawn.Speciality",
     "pk": 27,
     "fields": {
     	"name": "Атомна енергетика"
     }
   },
   {
-    "model": "auth.user",
+    "model": "fawn.Speciality",
     "pk": 28,
     "fields": {
     	"name": "Теплоенергетика"
     }
   },
   {
-    "model": "auth.user",
+    "model": "fawn.Speciality",
     "pk": 29,
     "fields": {
     	"name": "Автоматизація та комп'ютерно-інтегровані технології"
     }
   },
   {
-    "model": "auth.user",
+    "model": "fawn.Speciality",
     "pk": 30,
     "fields": {
     	"name": "Метрологія та інформаційно-вимірювальна техніка"
     }
   },
   {
-    "model": "auth.user",
+    "model": "fawn.Speciality",
     "pk": 31,
     "fields": {
     	"name": "Мікро- та наносистемна техніка"
     }
   },
   {
-    "model": "auth.user",
+    "model": "fawn.Speciality",
     "pk": 32,
     "fields": {
     	"name": "Хімічні технології та інженерія"
     }
   },
   {
-    "model": "auth.user",
+    "model": "fawn.Speciality",
     "pk": 33,
     "fields": {
     	"name": "Біотехнології та біоінженерія"
     }
   },
   {
-    "model": "auth.user",
+    "model": "fawn.Speciality",
     "pk": 34,
     "fields": {
     	"name": "Біомедична інженерія"
     }
   },
   {
-    "model": "auth.user",
+    "model": "fawn.Speciality",
     "pk": 35,
     "fields": {
     	"name": "Електроніка"
