@@ -3,6 +3,6 @@
 {% block content %}
 	Your faculty is {{ chosen_faculty }} <hr>
 	{% for course in courses %}
-		<a href="#">{{ course }}</a> <hr>
+		<a href="{% url 'speciality' chosen_faculty.id course.id %}">{{ course }}</a> <hr>
 	{% endfor %}
 {% endblock %}

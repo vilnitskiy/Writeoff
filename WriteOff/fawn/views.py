@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 
 from .forms import RegistrationMultiForm, FileUploadForm
-from fawn.models import *
+from fawn.models import Faculty, Speciality, File, Specialization, Course, Student, Subject, Teacher
 
 
 class RegistrationView(CreateView):
@@ -25,7 +25,7 @@ class RegistrationView(CreateView):
 class FilesView(View):
     form_class = FileUploadForm
     initial = {}
-    # template_name = 'form_template.html'
+    template_name = 'files.html'
 
     def get(self, request, *args, **kwargs):
         # extracting parameters to get queryset
@@ -49,6 +49,7 @@ class FilesView(View):
             'files': files_queryset,
             'form': form
         }
+
         return render(request, self.template_name, data)
 
     def post(self, request, *args, **kwargs):
@@ -77,8 +78,22 @@ def courses(request, id_faculty):
 
 
 def speciality(request, id_faculty, id_course):
-    return render(request, 'speciality.html', {})
+    specialities = Speciality.objects.all()
+    chosen_faculty = Faculty.objects.get(id=id_faculty)
+    chosen_course = Course.objects.get(id=id_course)
+    return render(request, 'specialities.html',
+                  {'specialities': specialities,
+                   'chosen_faculty': chosen_faculty,
+                   'chosen_course': chosen_course})
 
 
-def specialization(equest, id_faculty, id_course, id_speciality):
-    pass
+def specialization(request, id_faculty, id_course, id_speciality):
+    specializations = Specialization.objects.all()
+    chosen_faculty = Faculty.objects.get(id=id_faculty)
+    chosen_course = Course.objects.get(id=id_course)
+    chosen_speciality = Speciality.objects.get(id=id_speciality)
+    return render(request, 'specializations.html',
+                  {'specializations': specializations,
+                   'chosen_faculty': chosen_faculty,
+                   'chosen_course': chosen_course,
+                   'chosen_speciality': chosen_speciality})
