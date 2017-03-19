@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 
 from .forms import RegistrationMultiForm, FileUploadForm
-from fawn.models import *
+from fawn.models import Faculty, Speciality, File, Specialization, Course, Student, Subject, Teacher
 
 
 class RegistrationView(CreateView):
@@ -25,7 +25,7 @@ class RegistrationView(CreateView):
 class FilesView(View):
     form_class = FileUploadForm
     initial = {}
-    # template_name = 'form_template.html'
+    template_name = 'files.html'
 
     def get(self, request, *args, **kwargs):
         # extracting parameters to get queryset
@@ -49,6 +49,7 @@ class FilesView(View):
             'files': files_queryset,
             'form': form
         }
+
         return render(request, self.template_name, data)
 
     def post(self, request, *args, **kwargs):
