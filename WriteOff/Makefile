@@ -16,3 +16,5 @@ test:
 	$(MANAGE) test $(TEST_APP)
 test_free:
 	$(MANAGE) test $(TEST_APP)
+loaddata:
+	$(MANAGE) loaddata fixtures/*.json
