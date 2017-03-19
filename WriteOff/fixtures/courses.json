@@ -1,0 +1,44 @@
+[
+{
+  "model": "fawn.course",
+  "pk": 1,
+  "fields": {
+    "course": 1
+  }
+},
+{
+  "model": "fawn.course",
+  "pk": 2,
+  "fields": {
+    "course": 2
+  }
+},
+{
+  "model": "fawn.course",
+  "pk": 3,
+  "fields": {
+    "course": 3
+  }
+},
+{
+  "model": "fawn.course",
+  "pk": 4,
+  "fields": {
+    "course": 4
+  }
+},
+{
+  "model": "fawn.course",
+  "pk": 5,
+  "fields": {
+    "course": 5
+  }
+},
+{
+  "model": "fawn.course",
+  "pk": 6,
+  "fields": {
+    "course": 6
+  }
+}
+]

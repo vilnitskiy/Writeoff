@@ -243,5 +243,47 @@
     "fields": {
     	"name": "Електроніка"
     }
+  },
+  {
+    "model": "fawn.Speciality",
+    "pk": 36,
+    "fields": {
+      "name": "Телекомунікації та радіотехніка"
+    }
+  },
+  {
+    "model": "fawn.Speciality",
+    "pk": 37,
+    "fields": {
+      "name": "Авіоніка"
+    }
+  },
+  {
+    "model": "fawn.Speciality",
+    "pk": 38,
+    "fields": {
+      "name": "Гірництво"
+    }
+  },
+  {
+    "model": "fawn.Speciality",
+    "pk": 39,
+    "fields": {
+      "name": "Видавництво та поліграфія"
+    }
+  },
+  {
+    "model": "fawn.Speciality",
+    "pk": 40,
+    "fields": {
+      "name": "Фізична реабілітація"
+    }
+  },
+  {
+    "model": "fawn.Speciality",
+    "pk": 41,
+    "fields": {
+      "name": "Соціальна робота"
+    }
   }
 ]
