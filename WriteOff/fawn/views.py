@@ -77,8 +77,22 @@ def courses(request, id_faculty):
 
 
 def speciality(request, id_faculty, id_course):
-    return render(request, 'speciality.html', {})
+    specialities = Speciality.objects.all()
+    chosen_faculty = Faculty.objects.get(id=id_faculty)
+    chosen_course = Course.objects.get(id=id_course)
+    return render(request, 'specialities.html',
+                  {'specialities': specialities,
+                   'chosen_faculty': chosen_faculty,
+                   'chosen_course': chosen_course})
 
 
-def specialization(equest, id_faculty, id_course, id_speciality):
-    pass
+def specialization(request, id_faculty, id_course, id_speciality):
+    specializations = Specialization.objects.all()
+    chosen_faculty = Faculty.objects.get(id=id_faculty)
+    chosen_course = Course.objects.get(id=id_course)
+    chosen_speciality = Speciality.objects.get(id=id_speciality)
+    return render(request, 'specializations.html',
+                  {'specializations': specializations,
+                   'chosen_faculty': chosen_faculty,
+                   'chosen_course': chosen_course,
+                   'chosen_speciality': chosen_speciality})

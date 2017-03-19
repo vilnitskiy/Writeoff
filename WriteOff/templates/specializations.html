@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+	Your faculty is {{ chosen_faculty }}, your course is {{ chosen_course }}, your speciality is {{ chosen_speciality }}<hr>
+	{% for specialization in specializations %}
+		<a href="{% url 'files' chosen_faculty.id chosen_course.id chosen_speciality.id specialization.id %}">{{ specialization }}</a> <hr>
+	{% endfor %}
+{% endblock %}
