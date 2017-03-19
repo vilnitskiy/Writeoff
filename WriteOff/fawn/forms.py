@@ -30,3 +30,4 @@ class FileUploadForm(ModelForm):
     class Meta:
         model = File
         fields = '__all__'
+

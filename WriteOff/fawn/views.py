@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from django.views.generic import CreateView
 from django.views import View
+from django.views.generic import CreateView
 from django.contrib.auth.models import User
 from django.urls import reverse
 
@@ -47,17 +47,23 @@ class FilesView(View):
         form = self.form_class(initial=self.initial)
         data = {
             'files': files_queryset,
-            'form': form
+            'form': form,
+            'chosen_specialization': kwargs['id_specialization'],
+            'chosen_faculty': kwargs['id_faculty'],
+            'chosen_course': kwargs['id_course'],
+            'chosen_speciality': kwargs['id_speciality']
         }
 
         return render(request, self.template_name, data)
 
     def post(self, request, *args, **kwargs):
-        form = self.form_class(request.POST)
+        form = self.form_class(request.POST, request.FILES)
         if form.is_valid():
-            return HttpResponse({'success': True})
-
-        return render(request, '', {'form': form})
+            form.save()
+            return render(request, self.template_name, {'success': True,
+                                                        'form': form})
+        return render(request, self.template_name, {'success': False,
+                                                    'form': form})
 
 
 def main(request):
