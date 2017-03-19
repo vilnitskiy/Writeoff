@@ -9,6 +9,10 @@ To create and run virtual environment:
 virtualenv venv --no-site-packages
 source venv/bin/activate
 ```
+Load initial data:
+```
+make loaddata
+```
 To run locally, just execute:
 ```
 cd Writeoff
