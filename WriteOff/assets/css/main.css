@@ -42,3 +42,10 @@
 .register-btn .btn-login {
     float: right;
 }
+
+.upload_form {
+    text-align: left;
+    padding: 30px;
+    margin: auto;
+    width: 60%;
+}
