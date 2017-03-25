@@ -3,3 +3,4 @@ flake8==3.3.0
 django_extensions
 pygraphviz
 django-betterforms==1.1.4
+django-widget-tweaks

@@ -1,5 +1,5 @@
 .btn-link{
-	color: black!important;
+	color: white!important;
 }
 
 .top_panel {
@@ -8,7 +8,7 @@
 
 .top_btns {
 	text-align: right;
-	margin-right: 5%; 
+	margin-right: 5%;
 }
 
 .wrapper {
@@ -19,4 +19,26 @@
 
 .signup_btn {
 	padding: 30px;
+}
+#toshit:hover {
+    background-color: #214899;
+    color: white;
+}
+#toshit {
+    background-color: #ffffff;
+    color: #202020;
+}
+
+.register-form {
+    padding-top: 30px;
+    width: 30%;
+    margin: 0 auto;
+}
+
+.register-fields {
+    text-align: left;
+}
+
+.register-btn .btn-login {
+    float: right;
 }

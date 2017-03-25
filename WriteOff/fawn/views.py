@@ -1,11 +1,18 @@
+import logging
+
 from django.shortcuts import render, redirect
 from django.views import View
 from django.views.generic import CreateView
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
 from django.urls import reverse
+from django.http import Http404
 
 from .forms import RegistrationMultiForm, FileUploadForm
 from fawn.models import Faculty, Speciality, File, Specialization, Course, Student, Subject, Teacher
+
+
+logger = logging.getLogger(__name__)
 
 
 class RegistrationView(CreateView):
@@ -19,6 +26,9 @@ class RegistrationView(CreateView):
         student = form['student'].save(commit=False)
         student.user = User.objects.get(username=user.username)
         student.save()
+        new_user = authenticate(username=form['user'].cleaned_data['username'],
+                                password=form['user'].cleaned_data['password1'])
+        login(self.request, new_user)
         return redirect(reverse(self.success_url))
 
 
@@ -77,7 +87,11 @@ def faculties(request):
 
 def courses(request, id_faculty):
     courses = Course.objects.all()
-    chosen_faculty = Faculty.objects.get(id=id_faculty)
+    try:
+        chosen_faculty = Faculty.objects.get(id=id_faculty)
+    except:
+        logger.error('Cannot get model instance')
+        raise Http404
     return render(request, 'courses.html',
                   {'courses': courses,
                    'chosen_faculty': chosen_faculty})
@@ -85,8 +99,12 @@ def courses(request, id_faculty):
 
 def speciality(request, id_faculty, id_course):
     specialities = Speciality.objects.all()
-    chosen_faculty = Faculty.objects.get(id=id_faculty)
-    chosen_course = Course.objects.get(id=id_course)
+    try:
+        chosen_faculty = Faculty.objects.get(id=id_faculty)
+        chosen_course = Course.objects.get(id=id_course)
+    except:
+        logger.error('Cannot get model instance')
+        raise Http404
     return render(request, 'specialities.html',
                   {'specialities': specialities,
                    'chosen_faculty': chosen_faculty,
@@ -95,9 +113,13 @@ def speciality(request, id_faculty, id_course):
 
 def specialization(request, id_faculty, id_course, id_speciality):
     specializations = Specialization.objects.all()
-    chosen_faculty = Faculty.objects.get(id=id_faculty)
-    chosen_course = Course.objects.get(id=id_course)
-    chosen_speciality = Speciality.objects.get(id=id_speciality)
+    try:
+        chosen_faculty = Faculty.objects.get(id=id_faculty)
+        chosen_course = Course.objects.get(id=id_course)
+        chosen_speciality = Speciality.objects.get(id=id_speciality)
+    except:
+        logger.error('Cannot get model instance')
+        raise Http404
     return render(request, 'specializations.html',
                   {'specializations': specializations,
                    'chosen_faculty': chosen_faculty,

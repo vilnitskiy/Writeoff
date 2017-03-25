@@ -1,11 +1,15 @@
 {% extends "base.html" %}
-{% load i18n %}
+{% load static %}
 {% block content %}
 
+<div class="register-form">
 <form method="post">
     {% csrf_token %}
+    <div class="register-fields">
     {{ form.as_p }}
-    <button type="submit">Register</button>
+    <button type="submit" class="btn-secondary btn register-btn">Register</button>
+        </div>
 </form>
+</div>
 
 {% endblock %}

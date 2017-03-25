@@ -12,11 +12,26 @@ class UserRegistrationForm(UserCreationForm):
         model = User
         fields = ('username', 'password1', 'password2')
 
+    def __init__(self, *args, **kwargs):
+        super(UserRegistrationForm, self).__init__(*args, **kwargs)
+
+        self.fields['username'].widget.attrs['class'] = 'form-control'
+        self.fields['password1'].widget.attrs['class'] = 'form-control'
+        self.fields['password2'].widget.attrs['class'] = 'form-control'
+
 
 class StudentRegistrationForm(ModelForm):
     class Meta:
         model = Student
         fields = ('faculty', 'course', 'specialization', 'group')
+
+    def __init__(self, *args, **kwargs):
+        super(StudentRegistrationForm, self).__init__(*args, **kwargs)
+
+        self.fields['faculty'].widget.attrs['class'] = 'form-control'
+        self.fields['course'].widget.attrs['class'] = 'form-control'
+        self.fields['specialization'].widget.attrs['class'] = 'form-control'
+        self.fields['group'].widget.attrs['class'] = 'form-control'
 
 
 class RegistrationMultiForm(MultiModelForm):

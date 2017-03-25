@@ -2,14 +2,18 @@
 {% load static %}
 {% block content %}
 	<div class="wrapper">
+    {% if request.user.is_authenticated %}{% else %}
 		<div class="signup_btn">
-			<a class="btn btn-secondary" href="{% url 'register' %}">Sign up</a>
+			<a id="signup" class="btn btn-secondary btn-lg" href="{% url 'register' %}">Sign up</a>
 		</div>
+        <br>
+        {% endif %}
 		<div class="content">
 			Fuck it, give me write off all the shit!
 		</div>
+        <br>
 		<div class="toshit_btn">
-			<a href="{% url 'faculties' %}" class="btn btn-secondary">Go to the shit</a>
+			<a id="toshit" href="{% url 'faculties' %}" class="btn btn-secondary btn-lg">Go to the shit</a>
 		</div>
 	</div>
 {% endblock %}
