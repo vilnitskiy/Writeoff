@@ -1,19 +1,17 @@
 {% extends "base.html" %}
 {% load i18n %}
-{% load widget_tweaks %}
-
 {% block content %}
-<div class="login-form">
-<form method="post" action=".">
-  {% csrf_token %}
-  <div class="login-fields">
-      Username: {{ form.username|add_class:"form-control" }}
-      Password: {{ form.password|add_class:"form-control" }}
+<div class="container theme-showcase" role="main">
+<div class="jumbotron">
+  <div class="container">
+    <form method="post" action=".">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input class="btn btn-primary btn-lg" type="submit" value="{% trans 'Log in' %}" />
+      <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+    <p>{% trans "Not member" %}? <a href="{% url 'register' %}">{% trans "Register" %}</a>!</p>
   </div>
-  <input type="submit" class="btn btn-secondary btn-login" value="{% trans 'Log in' %}" />
-  <input type="hidden" name="next" value="{{ next }}" />
-</form>
-<p>{% trans "Not member" %}? <a href="{% url 'register' %}">{% trans "Register" %}</a>!</p>
 </div>
-
+</div>
 {% endblock %}

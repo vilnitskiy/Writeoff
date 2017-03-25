@@ -1,15 +1,15 @@
 {% extends "base.html" %}
-{% load static %}
+{% load i18n %}
 {% block content %}
-
-<div class="register-form">
-<form method="post">
-    {% csrf_token %}
-    <div class="register-fields">
-    {{ form.as_p }}
-    <button type="submit" class="btn-secondary btn register-btn">Register</button>
-        </div>
-</form>
+<div class="container theme-showcase" role="main">
+<div class="jumbotron">
+  <div class="container">
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button class="btn btn-lg btn-primary" type="submit">Register</button>
+    </form>
+    </div>
+  </div>
 </div>
-
 {% endblock %}
