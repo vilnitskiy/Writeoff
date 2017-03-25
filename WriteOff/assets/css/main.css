@@ -29,16 +29,17 @@
     color: #202020;
 }
 
-.register-form {
+.register-form, .login-form {
     padding-top: 30px;
     width: 30%;
     margin: 0 auto;
 }
 
-.register-fields {
+.register-fields, .login-fields {
     text-align: left;
 }
 
-.register-btn .btn-login {
+.register-btn, .btn-login {
+    margin-top: 20px;
     float: right;
 }
