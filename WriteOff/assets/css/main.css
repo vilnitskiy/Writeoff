@@ -44,6 +44,13 @@
     float: right;
 }
 
+.upload_form {
+    text-align: left;
+    padding: 30px;
+    margin: auto;
+    width: 60%;
+}
+
 .card{
     width: 300px;
     border: 1px solid gray;
@@ -62,10 +69,22 @@
     background-color: #e2e3dd;
 }
 
-#mainbox{
+#mainbox {
     font-family: calibri;
     box-sizing: border-box;
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
+}
+
+.label_form_item {
+    font-size: 16px;
+}
+
+.submit_file {
+    margin-top: 10px;
+}
+
+.form_items {
+    padding-top: 15px;
 }

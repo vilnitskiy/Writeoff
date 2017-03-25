@@ -66,8 +66,10 @@ class Subject(models.Model):
 
 class File(models.Model):
     file = models.FileField()
-    subject = models.TextField()
-    file_type = models.TextField(choices=Constants.TYPE_CHOICES)
+    subject = models.CharField(max_length=60)
+    file_type = models.CharField(
+        choices=Constants.TYPE_CHOICES,
+        max_length=100)
     extra_comment = models.TextField()
     specialization = models.ForeignKey(Specialization)
     course = models.ForeignKey(Course)

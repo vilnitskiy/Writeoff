@@ -1,12 +1,21 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-	{% for file in files %}
+    {% for file in files %}
         <a href="{{ file.file.url }}">{{ file.file.name }}</a>
-	{% endfor %}
+    {% endfor %}
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form }}
-        <input type="submit" value="Submit" />
+        <div class="upload_form form-group">
+        {% for item in form %}
+            <div class="form_items">
+                <label for="id_{{ item.name }}">{{ item.label }}:</label>
+                {{ item }}
+            </div>
+        {% endfor %}
+        <div class="submit_file">
+            <input type="submit" class="btn btn-primary" value="Submit" />
+        </div>
+        </div>
     </form>
 {% endblock %}
