@@ -18,7 +18,7 @@ class Course(models.Model):
     course = models.PositiveSmallIntegerField()
 
     def __unicode__(self):
-        return u"Studet's course is %d" % (self.course)
+        return u"%d course" % (self.course)
 
 
 class Faculty(models.Model):

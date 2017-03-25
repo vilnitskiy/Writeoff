@@ -1,19 +1,17 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block content %}
-<div class="container theme-showcase" role="main">
-<div class="jumbotron">
-  <div class="container">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h2 class="panel-title">Your faculty is {{ chosen_faculty }}</h2>
-			</div>
-			<div class="panel-body">
-				{% for course in courses %}
-					<a class="list-group-item" href="{% url 'speciality' chosen_faculty.id course.id %}"><p>{{ course }}</p></a>
-				{% endfor %}
-			</div>
-		</div>
-	</div>
-</div>
+    <div class="courses-wrapper">
+	Your faculty is {{ chosen_faculty }}. Now choose your course:
+    <div id="mainbox">
+	{% for course in courses %}
+        <a href="{% url 'speciality' chosen_faculty.id course.id %}">
+            <div class="card">
+                <h1>{{ course }}</h1>
+            </div>
+        </a>
+	{% endfor %}
+    </div>
+    </div>
 {% endblock %}

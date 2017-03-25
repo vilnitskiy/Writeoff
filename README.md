@@ -15,8 +15,8 @@ make loaddata
 ```
 To run locally, just execute:
 ```
-cd Writeoff
-pip install -r requirements.txt
+cd WriteOff
+pip install -r "requirements.txt"
 make init
 make run
 ```

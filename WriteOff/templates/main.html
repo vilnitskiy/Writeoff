@@ -1,19 +1,19 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
- <div class="container theme-showcase" role="main">
-<div class="jumbotron">
 	<div class="wrapper">
+    {% if request.user.is_authenticated %}{% else %}
 		<div class="signup_btn">
-			<a href="{% url 'register' %}"><button type="button" class="btn btn-lg btn-primary ">Sign up</button></a>
+			<a id="signup" class="btn btn-secondary btn-lg" href="{% url 'register' %}">Sign up</a>
 		</div>
+        <br>
+        {% endif %}
 		<div class="content">
-			<p>Fuck it, give me write off all the shit!</p>
+			Fuck it, give me write off all the shit!
 		</div>
+        <br>
 		<div class="toshit_btn">
-			<a href="{% url 'faculties' %}"><button type="button" class="btn btn-lg btn-success ">Go to the shit</button</a>
+			<a id="toshit" href="{% url 'faculties' %}" class="btn btn-secondary btn-lg">Go to the shit</a>
 		</div>
 	</div>
-</div>
-</div>
 {% endblock %}
