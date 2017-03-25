@@ -1,8 +1,17 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block content %}
-	Your faculty is {{ chosen_faculty }} <hr>
+    <div class="courses-wrapper">
+	Your faculty is {{ chosen_faculty }}. Now choose your course:
+    <div id="mainbox">
 	{% for course in courses %}
-		<a href="{% url 'speciality' chosen_faculty.id course.id %}">{{ course }}</a> <hr>
+        <a href="{% url 'speciality' chosen_faculty.id course.id %}">
+            <div class="card">
+                <h1>{{ course }}</h1>
+            </div>
+        </a>
 	{% endfor %}
+    </div>
+    </div>
 {% endblock %}
