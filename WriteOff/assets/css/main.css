@@ -31,7 +31,6 @@
 
 .register-form, .login-form {
     padding-top: 30px;
-    width: 30%;
     margin: 0 auto;
 }
 
@@ -39,7 +38,7 @@
     text-align: left;
 }
 
-.register-btn, .btn-login {
+.register-btn, .login-btn {
     margin-top: 20px;
     float: right;
 }
@@ -87,4 +86,13 @@
 
 .form_items {
     padding-top: 15px;
+}
+
+.theme-showcase {
+    padding-top: 30px;
+}
+
+.jumbotron {
+    width: 70%;
+    margin: 0 auto;
 }
