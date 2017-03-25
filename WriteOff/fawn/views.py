@@ -125,3 +125,16 @@ def specialization(request, id_faculty, id_course, id_speciality):
                    'chosen_faculty': chosen_faculty,
                    'chosen_course': chosen_course,
                    'chosen_speciality': chosen_speciality})
+
+
+def subjects(request, id_faculty, id_course, id_speciality):
+    faculty = Faculty.objects.get(id=kwargs['id_faculty'])
+    course = Course.objects.get(id=kwargs['id_course'])
+    specialization = Specialization.objects.get(
+        id=kwargs['id_specialization']
+    )
+    files_queryset = File.objects.filter(faculty=faculty,
+                                         course=course,
+                                         specialization=specialization)
+    subjects = files_queryset.subject
+    return render(request, 'subjects.html', {'subjects': subjects})

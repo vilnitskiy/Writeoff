@@ -24,6 +24,9 @@ urlpatterns = [
     url(r'^(?P<id_faculty>\d+)/(?P<id_course>\d+)/(?P<id_speciality>\d+)/(?P<id_specialization>\d+)/',
         views.FilesView.as_view(),
         name='files'),
+    url(r'^(?P<id_faculty>\d+)/(?P<id_course>\d+)/(?P<id_speciality>\d+)/(?P<id_specialization>\d+)/',
+        views.subjects,
+        name='subjects'),
 
     # auth views
     url('^register/', views.RegistrationView.as_view(), name='register'),

@@ -7,15 +7,15 @@
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="upload_form form-group">
-        {% for item in form %}
-            <div class="form_items">
-                <label for="id_{{ item.name }}">{{ item.label }}:</label>
-                {{ item }}
+            {% for item in form %}
+                <div class="form_items">
+                    <label for="id_{{ item.name }}" class="btn btn-default btn-file">{{ item.label }}:</label>
+                    {{ item }}
+                </div>
+            {% endfor %}
+            <div class="submit_file">
+                <input type="submit" class="btn btn-primary" value="Submit" />
             </div>
-        {% endfor %}
-        <div class="submit_file">
-            <input type="submit" class="btn btn-primary" value="Submit" />
-        </div>
         </div>
     </form>
 {% endblock %}

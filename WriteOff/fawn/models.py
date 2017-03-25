@@ -66,7 +66,7 @@ class Subject(models.Model):
 
 class File(models.Model):
     file = models.FileField()
-    subject = models.CharField(max_length=60)
+    subject = models.ForeignKey(Subject)
     file_type = models.CharField(
         choices=Constants.TYPE_CHOICES,
         max_length=100)
