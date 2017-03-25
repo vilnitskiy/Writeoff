@@ -1,7 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
+
+
 {% block content %}
+    <div id="mainbox">
 	{% for faculty in faculties %}
-		<a href="{% url 'courses' faculty.id %}">{{ faculty }}</a> <hr>
+        <a href="{% url 'courses' faculty.id %}">
+            <div class="card">
+                <h1>{{ faculty }}</h1>
+            </div>
+        </a>
 	{% endfor %}
+    </div>
 {% endblock %}

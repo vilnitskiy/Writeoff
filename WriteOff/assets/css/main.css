@@ -43,3 +43,29 @@
     margin-top: 20px;
     float: right;
 }
+
+.card{
+    width: 300px;
+    border: 1px solid gray;
+    box-shadow: 1px 1px 7px #b4b4b4;
+    border-top: 10px solid green;
+    min-height: 200px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card:hover {
+    background-color: #e2e3dd;
+}
+
+#mainbox{
+    font-family: calibri;
+    box-sizing: border-box;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
