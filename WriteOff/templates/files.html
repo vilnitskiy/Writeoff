@@ -9,8 +9,8 @@
         <div class="upload_form">
         {% for item in form %}
             <div class="{{ item.name }}">
-            <label for="id_{{ item.name }}">{{ item.label }}:</label>
-            {{ item }}
+                <label for="id_{{ item.name }}">{{ item.label }}:</label>
+                {{ item }}
             </div>
         {% endfor %}
         <input type="submit" value="Submit" />
