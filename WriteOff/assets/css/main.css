@@ -49,6 +49,7 @@
     padding: 30px;
     margin: auto;
     width: 60%;
+}
 
 .card{
     width: 300px;
@@ -68,7 +69,7 @@
     background-color: #e2e3dd;
 }
 
-#mainbox{
+#mainbox {
     font-family: calibri;
     box-sizing: border-box;
     justify-content: center;
