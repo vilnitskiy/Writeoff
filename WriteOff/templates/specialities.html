@@ -1,8 +1,19 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-	Your faculty is {{ chosen_faculty }}, your course is {{ chosen_course }}<hr>
-	{% for speciality in specialities %}
-		<a href="{% url 'specialization' chosen_faculty.id chosen_course.id speciality.id %}">{{ speciality }}</a> <hr>
-	{% endfor %}
+<div class="container theme-showcase" role="main">
+<div class="jumbotron">
+  <div class="container">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h2 class="panel-title">Your faculty is {{ chosen_faculty }}, your course is {{ chosen_course }}</h2>
+			</div>
+			<div class="panel-body">
+				{% for speciality in specialities %}
+					<a class="list-group-item"  href="{% url 'specialization' chosen_faculty.id chosen_course.id speciality.id %}"><p>{{ speciality }}<p></a>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
 {% endblock %}
