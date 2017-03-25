@@ -1,15 +1,20 @@
 {% extends 'base.html' %}
 {% load static %}
-
-
 {% block content %}
-    <div id="mainbox">
-	{% for faculty in faculties %}
-        <a href="{% url 'courses' faculty.id %}">
-            <div class="card">
-                <h1>{{ faculty }}</h1>
-            </div>
-        </a>
-	{% endfor %}
-    </div>
+
+<div class="container theme-showcase" role="main">
+<div class="jumbotron">
+  <div class="container">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h2 class="panel-title">Факультети</h2>
+			</div>
+			<div class="panel-body">
+				{% for faculty in faculties %}
+					<a class="list-group-item" href="{% url 'courses' faculty.id %}"><p>{{ faculty }}</p></a>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
 {% endblock %}
