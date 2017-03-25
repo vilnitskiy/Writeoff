@@ -6,17 +6,16 @@
     {% endfor %}
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        <div class="upload_form">
+        <div class="upload_form form-group">
         {% for item in form %}
-            <div class="{{ item.name }}">
-                <div class="label_form_item">
-                    <label for="id_{{ item.name }}">{{ item.label }}:</label>
-                </div>
+            <div class="form_items">
+                <label for="id_{{ item.name }}">{{ item.label }}:</label>
                 {{ item }}
-                <hr>
             </div>
         {% endfor %}
-        <input type="submit" value="Submit" />
+        <div class="submit_file">
+            <input type="submit" class="btn btn-primary" value="Submit" />
+        </div>
         </div>
     </form>
 {% endblock %}

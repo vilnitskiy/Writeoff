@@ -80,3 +80,11 @@
 .label_form_item {
     font-size: 16px;
 }
+
+.submit_file {
+    margin-top: 10px;
+}
+
+.form_items {
+    padding-top: 15px;
+}
