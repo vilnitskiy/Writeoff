@@ -75,3 +75,7 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.label_form_item {
+    font-size: 16px;
+}
