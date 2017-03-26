@@ -112,11 +112,12 @@ def speciality(request, id_faculty, id_course):
 
 
 def specialization(request, id_faculty, id_course, id_speciality):
-    specializations = Specialization.objects.all()
     try:
         chosen_faculty = Faculty.objects.get(id=id_faculty)
         chosen_course = Course.objects.get(id=id_course)
         chosen_speciality = Speciality.objects.get(id=id_speciality)
+
+        specializations = Specialization.objects.filter(speciality=chosen_speciality)
     except:
         logger.error('Cannot get model instance')
         raise Http404
