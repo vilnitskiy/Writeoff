@@ -49,10 +49,5 @@ class FileUploadForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super(FileUploadForm, self).__init__(*args, **kwargs)
 
-        self.fields['file'].widget.attrs['class'] = 'form-control'
-        self.fields['subject'].widget.attrs['class'] = 'form-control'
-        self.fields['file_type'].widget.attrs['class'] = 'form-control'
-        self.fields['extra_comment'].widget.attrs['class'] = 'form-control'
-        self.fields['specialization'].widget.attrs['class'] = 'form-control'
-        self.fields['course'].widget.attrs['class'] = 'form-control'
-        self.fields['faculty'].widget.attrs['class'] = 'form-control'
+        for field in self.fields:
+            self.fields[field].widget.attrs['class'] = 'form-control'
