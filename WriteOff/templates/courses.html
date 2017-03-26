@@ -3,7 +3,7 @@
 
 {% block content %}
     <div class="courses-wrapper">
-	Your faculty is {{ chosen_faculty }}. Now choose your course:
+        <p class="additional-text">Your faculty is {{ chosen_faculty }}. Now choose your course:</p>
     <div id="mainbox">
 	{% for course in courses %}
         <a href="{% url 'speciality' chosen_faculty.id course.id %}">

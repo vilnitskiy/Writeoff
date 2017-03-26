@@ -50,12 +50,37 @@
     width: 60%;
 }
 
-.card{
+.card {
     width: 300px;
     border: 1px solid gray;
     box-shadow: 1px 1px 7px #b4b4b4;
-    border-top: 10px solid green;
     min-height: 200px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.specialities-card {
+    width: 330px;
+    border: 1px solid gray;
+    box-shadow: 1px 1px 7px #b4b4b4;
+    min-height: 280px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.specializations-card {
+    width: 350px;
+    border: 1px solid gray;
+    box-shadow: 1px 1px 7px #b4b4b4;
+    min-height: 450px;
     padding: 10px;
     margin: 10px;
     text-align: center;
@@ -95,4 +120,20 @@
 .jumbotron {
     width: 70%;
     margin: 0 auto;
+}
+
+.courses-wrapper, .specialities-wrapper {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.specializations-wrapper {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.additional-text {
+    padding: 20px;
+    text-align: center;
+    font-size: 14pt;
 }
