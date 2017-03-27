@@ -68,6 +68,21 @@ class FilesView(View):
 
     def post(self, request, *args, **kwargs):
         form = self.form_class(request.POST, request.FILES)
+        new_subject = request.POST['new_subject']
+        subjects = Subject.objects.all()
+        new_s = False
+        if not subjects:
+            Subject.objects.create(
+                name='unknown')
+        if request.POST:
+            for subj in subjects:
+                if str(subj) != str(new_subject):
+                    new_s = True
+                else:
+                    new_s = False
+        if new_s:
+            Subject.objects.create(
+                name=new_subject)
         if form.is_valid():
             form.save()
             return render(request, self.template_name, {'success': True,
@@ -127,14 +142,15 @@ def specialization(request, id_faculty, id_course, id_speciality):
                    'chosen_speciality': chosen_speciality})
 
 
-def subjects(request, id_faculty, id_course, id_speciality):
-    faculty = Faculty.objects.get(id=kwargs['id_faculty'])
-    course = Course.objects.get(id=kwargs['id_course'])
+def subjects(request, id_faculty, id_course, id_specialization, **kwargs):
+    faculty = Faculty.objects.get(id=id_faculty)
+    course = Course.objects.get(id=id_course)
     specialization = Specialization.objects.get(
-        id=kwargs['id_specialization']
+        id=id_specialization
     )
     files_queryset = File.objects.filter(faculty=faculty,
                                          course=course,
                                          specialization=specialization)
-    subjects = files_queryset.subject
+    print files_queryset
+    subjects = files_queryset
     return render(request, 'subjects.html', {'subjects': subjects})

@@ -24,7 +24,7 @@ urlpatterns = [
     url(r'^(?P<id_faculty>\d+)/(?P<id_course>\d+)/(?P<id_speciality>\d+)/(?P<id_specialization>\d+)/',
         views.FilesView.as_view(),
         name='files'),
-    url(r'^(?P<id_faculty>\d+)/(?P<id_course>\d+)/(?P<id_speciality>\d+)/(?P<id_specialization>\d+)/',
+    url(r'^subjects/(?P<id_faculty>\d+)/(?P<id_course>\d+)/(?P<id_speciality>\d+)/(?P<id_specialization>\d+)/',
         views.subjects,
         name='subjects'),
 

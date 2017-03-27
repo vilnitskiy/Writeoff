@@ -45,9 +45,21 @@ class Specialization(models.Model):
 
 
 class Teacher(models.Model):
-    first_name = models.CharField(max_length=30, null=True, blank=True)
-    middle_name = models.CharField(max_length=30, null=True, blank=True)
-    last_name = models.CharField(max_length=30, null=True, blank=False)
+    first_name = models.CharField(
+        max_length=30,
+        null=True,
+        blank=True,
+        default='unknown')
+    middle_name = models.CharField(
+        max_length=30,
+        null=True,
+        blank=True,
+        default='unknown')
+    last_name = models.CharField(
+        max_length=30,
+        null=True,
+        blank=False,
+        default='unknown')
     degree = models.CharField(max_length=30, null=True, blank=True)
 
     def full_name(self):
@@ -56,12 +68,16 @@ class Teacher(models.Model):
 
 
 class Subject(models.Model):
-    name = models.CharField(max_length=30)
-    full_name = models.TextField()
-    teacher = models.ForeignKey(Teacher, blank=True, null=True)
+    name = models.CharField(
+        max_length=30)
+    full_name = models.TextField(blank=True, null=True)
+    teacher = models.ForeignKey(
+        Teacher,
+        blank=True,
+        null=True)
 
     def __unicode__(self):
-        return u"%s %s" % (self.name, self.teacher.last_name)
+        return u"%s" % (self.name)
 
 
 class File(models.Model):
