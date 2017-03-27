@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="files-wrapper">
+        <p class="adtn-text">
+            Your faculty is {{ chosen_faculty }},<br>
+            your course is {{ chosen_course.course }},<br>
+            your speciality is {{ chosen_speciality }}<br>
+            your specialization is {{ chosen_specialization }}.
+        </p>
+        <div class="form-link">
+            Have something more to share? 
+            <a href="{% url 'files' chosen_faculty.id chosen_course.id chosen_speciality.id chosen_specialization.id %}">Click to add more files</a>
+        </div>
+        <div id="mainbox">
+            {% for file in files %}
+                <div class="files">
+                    <a href="{{ file.file.url }}">
+                    <div class="files-card">
+                            Subject: {{ file.subject }} <br>
+                            File name: {{ file.file.name }}
+                    </div>
+                    </a>
+                </div>
+                <br>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
