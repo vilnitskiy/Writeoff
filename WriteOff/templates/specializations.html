@@ -9,7 +9,7 @@
         </p>
         <div id="mainbox">
             {% for specialization in specializations %}
-                <a href="{% url 'files' chosen_faculty.id chosen_course.id chosen_speciality.id specialization.id %}">
+                <a href="{% url 'uploaded_files' chosen_faculty.id chosen_course.id chosen_speciality.id specialization.id %}">
                     <div class="specializations-card">
                         <h1>{{ specialization }}</h1>
                     </div>
