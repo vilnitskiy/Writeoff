@@ -2,12 +2,6 @@
 {% load static %}
 {% block content %}
 
-    <div class="u-link">
-    <a 
-    href="{% url 'uploaded_files' chosen_faculty chosen_course chosen_speciality chosen_specialization %}"
-    class="btn btn-primary"> << Back to shit
-    </a>
-    </div>
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="upload_form form-group">
