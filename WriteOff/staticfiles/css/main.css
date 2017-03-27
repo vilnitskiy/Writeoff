@@ -150,3 +150,12 @@
     justify-content: center;
     align-items: center;
 }
+
+.form-link {
+    text-align: center;
+    font-size: 24px;
+}
+
+.u-link {
+    padding: 20px;
+}

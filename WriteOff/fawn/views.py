@@ -131,6 +131,8 @@ def specialization(request, id_faculty, id_course, id_speciality):
 def uploaded_files(request, **kwargs):
     faculty = Faculty.objects.get(id=kwargs['id_faculty'])
     course = Course.objects.get(id=kwargs['id_course'])
+    speciality = Speciality.objects.get(
+        id=kwargs['id_specialization'])
     specialization = Specialization.objects.get(
         id=kwargs['id_specialization']
     )
@@ -144,4 +146,5 @@ def uploaded_files(request, **kwargs):
                       'files': files_queryset,
                       'chosen_faculty': faculty,
                       'chosen_course': course,
+                      'chosen_speciality': speciality,
                       'chosen_specialization': specialization})
