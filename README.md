@@ -28,4 +28,4 @@ make run
 1. Andriy Herasko
 
 ## UML-diagram ##
-![UML] (https://github.com/vilnitskiy/Writeoff/blob/master/WriteOff/myapp_models.png)
+![UML](https://github.com/vilnitskiy/Writeoff/blob/master/WriteOff/myapp_models.png)
