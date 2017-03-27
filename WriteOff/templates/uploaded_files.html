@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="files-wrapper">
+        <p class="additional-text">
+	        Your faculty is {{ chosen_faculty }}, your course is {{ chosen_course }}, your specialization is {{ chosen_specialization }}.
+        </p>
+        <div id="mainbox">
+        	{% for file in files %}
+        	 	<div class="files">
+        	    	<a href="{{ file.file.url }}">
+        	    	<div class="files-card">
+
+                        	Subject: {{ file.subject }} <br>
+                        	File name: {{ file.file.name }}
+
+                    </div>
+        	    	</a>
+        		</div>
+        		<br>
+        	{% endfor %}
+        </div>
+    </div>
+{% endblock %}

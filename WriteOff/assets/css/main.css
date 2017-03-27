@@ -137,3 +137,16 @@
     text-align: center;
     font-size: 14pt;
 }
+
+.files-card {
+    width: 330px;
+    border: 1px solid gray;
+    box-shadow: 1px 1px 7px #b4b4b4;
+    min-height: 280px;
+    padding: 10px;
+    margin: 10px;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
