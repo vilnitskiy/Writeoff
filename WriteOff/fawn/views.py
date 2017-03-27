@@ -48,7 +48,7 @@ class FilesView(View):
         files_queryset = File.objects.filter(faculty=faculty,
                                              course=course,
                                              specialization=specialization)
-
+        print specialization
         # passing initial data to FileUpload form
         self.initial['faculty'] = faculty
         self.initial['course'] = course
@@ -126,3 +126,22 @@ def specialization(request, id_faculty, id_course, id_speciality):
                    'chosen_faculty': chosen_faculty,
                    'chosen_course': chosen_course,
                    'chosen_speciality': chosen_speciality})
+
+
+def uploaded_files(request, **kwargs):
+    faculty = Faculty.objects.get(id=kwargs['id_faculty'])
+    course = Course.objects.get(id=kwargs['id_course'])
+    specialization = Specialization.objects.get(
+        id=kwargs['id_specialization']
+    )
+
+    files_queryset = File.objects.filter(faculty=faculty,
+                                         course=course,
+                                         specialization=specialization)
+    print specialization
+    return render(request, 'uploaded_files.html',
+                  {
+                      'files': files_queryset,
+                      'chosen_faculty': faculty,
+                      'chosen_course': course,
+                      'chosen_specialization': specialization})

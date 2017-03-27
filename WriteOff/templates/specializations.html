@@ -5,16 +5,16 @@
 {% block content %}
     <div class="specializations-wrapper">
         <p class="additional-text">
-	        Your faculty is {{ chosen_faculty }}, your course is {{ chosen_course }}, your speciality is {{ chosen_speciality }}.
+            Your faculty is {{ chosen_faculty }}, your course is {{ chosen_course }}, your speciality is {{ chosen_speciality }}.
         </p>
         <div id="mainbox">
-	        {% for specialization in specializations %}
+            {% for specialization in specializations %}
                 <a href="{% url 'files' chosen_faculty.id chosen_course.id chosen_speciality.id specialization.id %}">
                     <div class="specializations-card">
                         <h1>{{ specialization }}</h1>
                     </div>
                 </a>
-	        {% endfor %}
+            {% endfor %}
         </div>
     </div>
 {% endblock %}
