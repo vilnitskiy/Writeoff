@@ -157,5 +157,10 @@
 }
 
 .u-link {
+    margin: 20px;
+}
+
+.adtn-text {
     padding: 20px;
+    font-size: 14pt;
 }
