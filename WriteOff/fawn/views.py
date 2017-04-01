@@ -19,7 +19,7 @@ class RegistrationView(CreateView):
     """ Custom view for registering students """
     form_class = RegistrationMultiForm
     template_name = 'registration/register.html'
-    success_url = 'main'
+    success_url = 'uploaded_files'
 
     def form_valid(self, form):
         user = form['user'].save()
@@ -29,7 +29,13 @@ class RegistrationView(CreateView):
         new_user = authenticate(username=form['user'].cleaned_data['username'],
                                 password=form['user'].cleaned_data['password1'])
         login(self.request, new_user)
-        return redirect(reverse(self.success_url))
+
+        return redirect(reverse(self.success_url, kwargs={
+            'id_faculty': student.faculty.id,
+            'id_course': student.course.id,
+            'id_speciality': student.specialization.speciality.id,
+            'id_specialization': student.specialization.id
+        }))
 
 
 class FilesView(View):
@@ -48,7 +54,6 @@ class FilesView(View):
         files_queryset = File.objects.filter(faculty=faculty,
                                              course=course,
                                              specialization=specialization)
-        print specialization
         # passing initial data to FileUpload form
         self.initial['faculty'] = faculty
         self.initial['course'] = course
@@ -134,17 +139,17 @@ def uploaded_files(request, **kwargs):
     speciality = Speciality.objects.get(
         id=kwargs['id_specialization'])
     specialization = Specialization.objects.get(
-        id=kwargs['id_specialization']
-    )
+        id=kwargs['id_specialization'])
 
     files_queryset = File.objects.filter(faculty=faculty,
                                          course=course,
                                          specialization=specialization)
-    print specialization
+
     return render(request, 'uploaded_files.html',
                   {
                       'files': files_queryset,
                       'chosen_faculty': faculty,
                       'chosen_course': course,
                       'chosen_speciality': speciality,
-                      'chosen_specialization': specialization})
+                      'chosen_specialization': specialization
+                  })

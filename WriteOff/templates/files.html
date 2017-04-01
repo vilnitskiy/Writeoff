@@ -1,19 +1,27 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block content %}
 
+
+{% block content %}
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="upload_form form-group">
-        {% for item in form %}
-            <div class="form_items">
-                <label for="id_{{ item.name }}">{{ item.label }}:</label>
-                {{ item }}
+            {% for item in form %}
+                <div class="form_items">
+                    <label for="id_{{ item.name }}">{{ item.label }}:</label>
+                    {{ item }}
+                </div>
+            {% endfor %}
+            <div class="submit_file">
+                <button class="btn btn-secondary" onclick="goBack()">Go Back</button>
+                <input type="submit" class="btn btn-primary" value="Submit" />
             </div>
-        {% endfor %}
-        <div class="submit_file">
-            <input type="submit" class="btn btn-primary" value="Submit" />
-        </div>
         </div>
     </form>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 {% endblock %}
