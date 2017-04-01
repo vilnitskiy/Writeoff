@@ -155,15 +155,19 @@ class TestRegistrationView(TestCase):
     def test_post_form(self):
         """check saving data"""
         response = self.client.post(self.url, {
-            "user-username": "Lollol1",
+            "user-username": "test-user",
             "user-password1": "pbkdf2_sha256$30000$8W2dhItA8If2$C1pAmCP/OLYR7CppsM9PM+2pYybA6P6qBuoiTwU2Hr0=",
             "user-password2": "pbkdf2_sha256$30000$8W2dhItA8If2$C1pAmCP/OLYR7CppsM9PM+2pYybA6P6qBuoiTwU2Hr0=",
             "student-faculty": 1,
             "student-specialization": 1,
             "student-course": 2,
-            "student-group": "grupa"
+            "student-group": "test-group"
         }, follow=True)
         self.assertEqual(User.objects.count(), 1)
         self.assertEqual(Student.objects.count(), 1)
-        self.assertRedirects(response, expected_url=reverse('main'), status_code=302)
-
+        self.assertRedirects(response, expected_url=reverse('uploaded_files', kwargs={
+            'id_faculty': 1,
+            'id_course': 2,
+            'id_specialization': 1,
+            'id_speciality': 1
+        }), status_code=302)
