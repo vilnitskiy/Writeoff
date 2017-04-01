@@ -5,16 +5,12 @@ App developed for KPI students to make their studying much easier and productive
 
 To create and run virtual environment:
 ```
-virtualenv venv --no-site-packages
-source venv/bin/activate
-```
-Load initial data:
-```
-make loaddata
+virtualenv .ve --no-site-packages
+source .ve/bin/activate
 ```
 To run locally, just execute:
 ```
-cd WriteOff
+cd Writeoff/WriteOff
 pip install -r "requirements.txt"
 make init
 make run

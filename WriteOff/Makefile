@@ -4,10 +4,8 @@ TEST_APP=syncapp
 
 init:
 	$(MANAGE) migrate
+	$(MANAGE) loaddata fixtures/*.json
 run:
-	$(flake8)
-	$(MANAGE) runserver
-run_free:
 	$(MANAGE) runserver
 pyclean:
 	find . -name '*.pyc' -delete
