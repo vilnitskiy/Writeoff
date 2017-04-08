@@ -23,14 +23,13 @@ class UserRegistrationForm(UserCreationForm):
 class StudentRegistrationForm(ModelForm):
     class Meta:
         model = Student
-        fields = ('faculty', 'course', 'specialization', 'group')
+        fields = ('faculty', 'course', 'group')
 
     def __init__(self, *args, **kwargs):
         super(StudentRegistrationForm, self).__init__(*args, **kwargs)
 
         self.fields['faculty'].widget.attrs['class'] = 'form-control'
         self.fields['course'].widget.attrs['class'] = 'form-control'
-        self.fields['specialization'].widget.attrs['class'] = 'form-control'
         self.fields['group'].widget.attrs['class'] = 'form-control'
 
 

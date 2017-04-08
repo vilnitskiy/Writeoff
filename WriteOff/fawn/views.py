@@ -9,7 +9,7 @@ from django.urls import reverse
 from django.http import Http404, HttpResponseRedirect
 
 from .forms import RegistrationMultiForm, FileUploadForm
-from fawn.models import Faculty, Speciality, File, Specialization, Course, Student, Subject, Teacher
+from fawn.models import Faculty, File, Course, Student
 
 
 logger = logging.getLogger(__name__)
@@ -32,9 +32,7 @@ class RegistrationView(CreateView):
 
         return redirect(reverse(self.success_url, kwargs={
             'id_faculty': student.faculty.id,
-            'id_course': student.course.id,
-            'id_speciality': student.specialization.speciality.id,
-            'id_specialization': student.specialization.id
+            'id_course': student.course.id
         }))
 
 
@@ -93,37 +91,6 @@ def courses(request, id_faculty):
     return render(request, 'courses.html',
                   {'courses': courses,
                    'chosen_faculty': chosen_faculty})
-
-
-def speciality(request, id_faculty, id_course):
-    specialities = Speciality.objects.all()
-    try:
-        chosen_faculty = Faculty.objects.get(id=id_faculty)
-        chosen_course = Course.objects.get(id=id_course)
-    except:
-        logger.error('Cannot get model instance')
-        raise Http404
-    return render(request, 'specialities.html',
-                  {'specialities': specialities,
-                   'chosen_faculty': chosen_faculty,
-                   'chosen_course': chosen_course})
-
-
-def specialization(request, id_faculty, id_course, id_speciality):
-    try:
-        chosen_faculty = Faculty.objects.get(id=id_faculty)
-        chosen_course = Course.objects.get(id=id_course)
-        chosen_speciality = Speciality.objects.get(id=id_speciality)
-
-        specializations = Specialization.objects.filter(speciality=chosen_speciality)
-    except:
-        logger.error('Cannot get model instance')
-        raise Http404
-    return render(request, 'specializations.html',
-                  {'specializations': specializations,
-                   'chosen_faculty': chosen_faculty,
-                   'chosen_course': chosen_course,
-                   'chosen_speciality': chosen_speciality})
 
 
 def uploaded_files(request, **kwargs):
