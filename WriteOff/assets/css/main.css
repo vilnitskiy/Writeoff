@@ -51,10 +51,10 @@
 }
 
 .card {
-    width: 300px;
+    width: 250px;
     border: 1px solid gray;
     box-shadow: 1px 1px 7px #b4b4b4;
-    min-height: 200px;
+    min-height: 150px;
     padding: 10px;
     margin: 10px;
     text-align: center;
@@ -94,6 +94,7 @@
 }
 
 #mainbox {
+
     font-family: calibri;
     box-sizing: border-box;
     justify-content: center;
