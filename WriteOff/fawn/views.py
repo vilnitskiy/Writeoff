@@ -6,7 +6,7 @@ from django.views.generic import CreateView
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django.urls import reverse
-from django.http import Http404
+from django.http import Http404, HttpResponseRedirect
 
 from .forms import RegistrationMultiForm, FileUploadForm
 from fawn.models import Faculty, Speciality, File, Specialization, Course, Student, Subject, Teacher
@@ -45,28 +45,19 @@ class FilesView(View):
 
     def get(self, request, *args, **kwargs):
         # extracting parameters to get queryset
-        faculty = Faculty.objects.get(id=kwargs['id_faculty'])
-        course = Course.objects.get(id=kwargs['id_course'])
-        specialization = Specialization.objects.get(
-            id=kwargs['id_specialization']
-        )
-
-        files_queryset = File.objects.filter(faculty=faculty,
-                                             course=course,
-                                             specialization=specialization)
+        files_queryset = File.objects.filter(faculty=kwargs['id_faculty'],
+                                             course=kwargs['id_course']
+                                             )
         # passing initial data to FileUpload form
-        self.initial['faculty'] = faculty
-        self.initial['course'] = course
-        self.initial['specialization'] = specialization
+        self.initial['faculty'] = kwargs['id_faculty']
+        self.initial['course'] = kwargs['id_course']
 
         form = self.form_class(initial=self.initial)
         data = {
             'files': files_queryset,
             'form': form,
-            'chosen_specialization': kwargs['id_specialization'],
             'chosen_faculty': kwargs['id_faculty'],
-            'chosen_course': kwargs['id_course'],
-            'chosen_speciality': kwargs['id_speciality']
+            'chosen_course': kwargs['id_course']
         }
 
         return render(request, self.template_name, data)
@@ -75,8 +66,10 @@ class FilesView(View):
         form = self.form_class(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return render(request, self.template_name, {'success': True,
-                                                        'form': form})
+            return HttpResponseRedirect(reverse('uploaded_files', kwargs={
+            'id_faculty': kwargs['id_faculty'],
+            'id_course': kwargs['id_course']
+            }))
         return render(request, self.template_name, {'success': False,
                                                     'form': form})
 
@@ -136,20 +129,14 @@ def specialization(request, id_faculty, id_course, id_speciality):
 def uploaded_files(request, **kwargs):
     faculty = Faculty.objects.get(id=kwargs['id_faculty'])
     course = Course.objects.get(id=kwargs['id_course'])
-    speciality = Speciality.objects.get(
-        id=kwargs['id_specialization'])
-    specialization = Specialization.objects.get(
-        id=kwargs['id_specialization'])
 
     files_queryset = File.objects.filter(faculty=faculty,
-                                         course=course,
-                                         specialization=specialization)
+                                         course=course
+                                         )
 
     return render(request, 'uploaded_files.html',
                   {
                       'files': files_queryset,
                       'chosen_faculty': faculty,
-                      'chosen_course': course,
-                      'chosen_speciality': speciality,
-                      'chosen_specialization': specialization
+                      'chosen_course': course
                   })

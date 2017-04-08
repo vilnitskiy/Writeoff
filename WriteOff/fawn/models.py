@@ -71,7 +71,6 @@ class File(models.Model):
         choices=Constants.TYPE_CHOICES,
         max_length=100)
     extra_comment = models.TextField()
-    specialization = models.ForeignKey(Specialization)
     course = models.ForeignKey(Course)
     faculty = models.ForeignKey(Faculty)
 

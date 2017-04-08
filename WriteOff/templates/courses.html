@@ -7,7 +7,7 @@
         <p class="additional-text">Your faculty is {{ chosen_faculty }}. Now choose your course:</p>
         <div id="mainbox">
 	        {% for course in courses %}
-                <a href="{% url 'speciality' chosen_faculty.id course.id %}">
+                <a href="{% url 'uploaded_files' chosen_faculty.id course.id %}">
                     <div class="card">
                         <h1>{{ course }}</h1>
                     </div>
