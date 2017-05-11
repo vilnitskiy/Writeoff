@@ -37,6 +37,11 @@ class RegistrationView(CreateView):
             'id_specialization': student.specialization.id
         }))
 
+class NotValidFile(Exception):
+    def __init__(self, arg):
+        self.msg = arg
+        logger.error(self.msg)
+
 
 class FilesView(View):
     form_class = FileUploadForm
@@ -77,8 +82,10 @@ class FilesView(View):
             form.save()
             return render(request, self.template_name, {'success': True,
                                                         'form': form})
-        return render(request, self.template_name, {'success': False,
-                                                    'form': form})
+        else:
+            render(request, self.template_name, {'success': False,
+                                                 'form': form})
+            raise NotValidFile('Errors with file {}'.format(form.id))
 
 
 def main(request):
